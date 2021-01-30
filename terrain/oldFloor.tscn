@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Meshes/tree.glb" type="PackedScene" id=1]
+
+[sub_resource type="QuadMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0980392, 0.501961, 0.396078, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0 )
+
+[node name="Floor" type="MeshInstance"]
+transform = Transform( 1000, 0, 0, 0, -0.000162921, 1, 0, -1000, -1.62921e-07, 0, 0, 0 )
+cast_shadow = 0
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="tree" type="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.001, 0, 0, 0, -1.62921e-10, -0.001, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+
+[node name="tree2" type="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.001, 0, 0, 0, -1.62921e-10, -0.001, 0, 1, -1.62921e-07, -0.01, 0, 0 )
+visible = false
+
+[node name="tree3" type="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.001, 0, 0, 0, -1.62921e-10, -0.001, 0, 1, -1.62921e-07, 0.01, 0, 0 )
+visible = false
+
+[node name="tree4" type="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.001, 0, 0, 0, -1.62921e-10, -0.001, 0, 1, -1.62921e-07, 0, -0.01, -1.62921e-06 )
+visible = false
+
+[node name="tree5" type="Spatial" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.001, 0, 0, 0, -1.62921e-10, -0.001, 0, 1, -1.62921e-07, 0, 0.01, 1.62921e-06 )
+visible = false
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
