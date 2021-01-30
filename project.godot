@@ -11,7 +11,12 @@ config_version=4
 [application]
 
 config/name="Lost and Found"
+run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "scatter" )
 
 [rendering]
 
