@@ -378,6 +378,9 @@ margin_left = -20.0
 margin_top = -121.448
 margin_right = 20.0
 margin_bottom = -81.4478
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Play" type="TextureButton" parent="MainMenu"]
 anchor_left = 0.5

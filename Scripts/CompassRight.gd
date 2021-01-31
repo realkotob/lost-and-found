@@ -1,10 +1,6 @@
 extends TextureRect
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,4 +12,4 @@ func _process(delta):
 	if not Global.copter_player:
 		return
 
-	$Dial.rect_rotation = Global.copter_player.get_compass_rotation()
+	$Dial.rect_rotation = - rad2deg(Global.copter_player.get_compass_rotation())

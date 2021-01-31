@@ -26,7 +26,6 @@ func _process(delta):
 		if zom != self:
 			var dist = global_transform.origin - zom.global_transform.origin
 			if dist.length_squared() < separation_dist:
-				print("Too close")
 				desired_vel += dist.normalized() * separation_strength * max_speed * ( 1- dist.length_squared() / separation_dist)
 			
 	desired_vel = desired_vel.normalized() 

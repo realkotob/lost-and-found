@@ -15,4 +15,4 @@ func _process(delta):
 	if not Global.ground_player:
 		return
 	
-	$Dial.rect_rotation = Global.ground_player.get_compass_rotation()
+	$Dial.rect_rotation = -rad2deg(Global.ground_player.get_compass_rotation())
