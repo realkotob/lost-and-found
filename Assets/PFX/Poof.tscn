@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://core/Generic/SeppukuParticle.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+radius = 0.1
+height = 0.2
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0409091 ), -2.27045, 0.0, 0, 0 ]
+
+[node name="Poof" type="CPUParticles"]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+mesh = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 0.3
+direction = Vector3( 0, 1, 0 )
+spread = 30.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.2
+damping = 5.0
+scale_amount = 2.0
+scale_amount_random = 0.5
+scale_amount_curve = SubResource( 3 )
+script = ExtResource( 1 )
