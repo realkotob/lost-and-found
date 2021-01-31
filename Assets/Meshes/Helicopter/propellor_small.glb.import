@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/helicopter.glb-734649ee74a67f60b12ea36b48c99186.scn"
+path="res://.import/propellor_small.glb-bdd386b685191a7df3bfe4823b825401.scn"
 
 [deps]
 
-source_file="res://Assets/Meshes/helicopter.glb"
-dest_files=[ "res://.import/helicopter.glb-734649ee74a67f60b12ea36b48c99186.scn" ]
+source_file="res://Assets/Meshes/Helicopter/propellor_small.glb"
+dest_files=[ "res://.import/propellor_small.glb-bdd386b685191a7df3bfe4823b825401.scn" ]
 
 [params]
 

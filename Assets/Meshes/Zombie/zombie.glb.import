@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/propellor_small.glb-7915432a13d4b00c96ca2875469c67df.scn"
+path="res://.import/zombie.glb-9686c6e2c3d45c9643014a7321ab257d.scn"
 
 [deps]
 
-source_file="res://Assets/Meshes/propellor_small.glb"
-dest_files=[ "res://.import/propellor_small.glb-7915432a13d4b00c96ca2875469c67df.scn" ]
+source_file="res://Assets/Meshes/Zombie/zombie.glb"
+dest_files=[ "res://.import/zombie.glb-9686c6e2c3d45c9643014a7321ab257d.scn" ]
 
 [params]
 

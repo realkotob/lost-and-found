@@ -1,9 +1,9 @@
 [gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://Assets/Meshes/helicopter.glb" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Meshes/propellor_small.glb" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Meshes/propellor_big.glb" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Meshes/tree.glb" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Meshes/Helicopter/helicopter.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Meshes/Helicopter/propellor_small.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Meshes/Helicopter/propellor_big.glb" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Meshes/Foliage/tree.glb" type="PackedScene" id=4]
 [ext_resource path="res://Environment.tres" type="Environment" id=5]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=6]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=7]
@@ -20,12 +20,12 @@
 [ext_resource path="res://Helicopter.gd" type="Script" id=18]
 [ext_resource path="res://terrain/tree_texture.png" type="Texture" id=19]
 [ext_resource path="res://terrain/gray_texture.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Meshes/Tree.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://Assets/Meshes/Foliage/Tree.obj" type="ArrayMesh" id=21]
 [ext_resource path="res://terrain/ground_texture.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Meshes/player.glb" type="PackedScene" id=23]
+[ext_resource path="res://Assets/Meshes/Player/player.glb" type="PackedScene" id=23]
 [ext_resource path="res://terrain/sand_texture.png" type="Texture" id=24]
 [ext_resource path="res://terrain/ground_light_texture.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Meshes/bush.obj" type="ArrayMesh" id=26]
+[ext_resource path="res://Assets/Meshes/Foliage/bush.obj" type="ArrayMesh" id=26]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -286,6 +286,7 @@ shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 
 [node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
+visible = false
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )
@@ -302,6 +303,7 @@ shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3( 1, 1, 1 )
 
 [node name="HTerrainDetailLayer2" type="Spatial" parent="HTerrain"]
+visible = false
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )

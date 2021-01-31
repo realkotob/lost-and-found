@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/zombie.glb-7be2484d2e09b5940309b33e93d6c017.scn"
+path="res://.import/tree.glb-3af9bcd0445a8337329d76b327703b83.scn"
 
 [deps]
 
-source_file="res://Assets/Character/zombie.glb"
-dest_files=[ "res://.import/zombie.glb-7be2484d2e09b5940309b33e93d6c017.scn" ]
+source_file="res://Assets/Meshes/Foliage/tree.glb"
+dest_files=[ "res://.import/tree.glb-3af9bcd0445a8337329d76b327703b83.scn" ]
 
 [params]
 
