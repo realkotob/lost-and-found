@@ -14,6 +14,9 @@ func horizontalify(vec : Vector3):
 var check_height = 0
 var des_height = 0
 func _process(delta):
+	if Global.game_stopped:
+		return
+		
 	var move_vec = Vector3(0,0,0)
 	if Input.is_action_pressed("p%s_down" %str(player_number)):
 		move_vec += horizontalify(cam.global_transform.basis.z)
