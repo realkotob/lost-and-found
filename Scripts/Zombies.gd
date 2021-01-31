@@ -3,7 +3,7 @@ extends Spatial
 
 var zombie_fab = preload("res://zombie.tscn")
 
-var zombie_count = 100
+var zombie_count = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
