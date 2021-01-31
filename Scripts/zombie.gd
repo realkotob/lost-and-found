@@ -26,10 +26,15 @@ func _process(delta):
 	
 	var target_pos = target.global_transform.origin
 	var target_dist = target_pos - global_transform.origin
-	
-	if target_dist.length_squared() > activate_distance_from_player:
+	var dis_sq = target_dist.length_squared()
+	if  dis_sq > activate_distance_from_player:
 		$RayCast.enabled = false
 		hide()
+		return
+	
+	if dis_sq < 0.2:
+		Global.emit_signal("you_lose")
+		Global.game_stopped = true
 		return
 	
 	$RayCast.enabled = true
@@ -37,8 +42,8 @@ func _process(delta):
 			
 		
 	var desired_vel = target_dist.normalized()
-	if target_dist.length_squared() < arrive_rad:
-		desired_vel *= target_dist.length_squared() / arrive_rad
+	if dis_sq < arrive_rad:
+		desired_vel *= dis_sq / arrive_rad
 	var others = get_tree().get_nodes_in_group("zombie")
 	for zom in others:
 		if zom != self:
