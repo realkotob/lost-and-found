@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Assets/Meshes/Helicopter/helicopter.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Meshes/Helicopter/propellor_small.glb" type="PackedScene" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Scripts/YouLose.gd" type="Script" id=36]
 [ext_resource path="res://Assets/Hauracherell NC.ttf" type="DynamicFontData" id=37]
 [ext_resource path="res://Scripts/Zombies.gd" type="Script" id=38]
+[ext_resource path="res://cabins.tscn" type="PackedScene" id=39]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -570,3 +571,5 @@ margin_right = 179.5
 margin_bottom = 62.0
 custom_fonts/font = SubResource( 8 )
 text = "You Lose!"
+
+[node name="Cabins" parent="." instance=ExtResource( 39 )]
