@@ -38,6 +38,9 @@ func _process(delta):
 #		move_vec -= horizontalify(cam.global_transform.basis.x)
 	
 	$CameraHelper.rotate_y(rotate_dir)
+	if move_vec.length_squared() >0:
+		$model.rotation.y = lerp($model.rotation.y, $CameraHelper.rotation.y, 0.1)
+	
 		
 	var next_pos = global_transform.origin + move_vec * delta * player_speed
 	if next_pos.z < 384 and next_pos.x < 384 and next_pos.z > 0 and next_pos.x > 0:
