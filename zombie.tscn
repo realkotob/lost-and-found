@@ -15,4 +15,4 @@ enabled = true
 cast_to = Vector3( 0, -10, 0 )
 collision_mask = 2
 
-[node name="zombie" type="Spatial" parent="." instance=ExtResource( 2 )]
+[node name="zombie" parent="." instance=ExtResource( 2 )]

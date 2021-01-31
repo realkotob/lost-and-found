@@ -18,6 +18,8 @@ var arrive_rad = 5
 var activate_distance_from_player = 4000
 var check_height = 0 
 func _process(delta):
+	if Global.game_stopped:
+		return
 	
 	var target = Global.ground_player
 	if not target:
@@ -58,7 +60,7 @@ func _process(delta):
 		check_height -=1
 		return
 	
-	check_height = 30 + randi() % 180
+	check_height = 30 + randi() % 30
 	var rayobj = $RayCast.get_collider()
 	if rayobj:
 		var y_pos = $RayCast.get_collision_point().y

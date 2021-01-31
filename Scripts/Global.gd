@@ -14,7 +14,7 @@ signal update_player_pos(global_x,global_y)
 
 var game_stopped = false
 
-var quadrants = []
+#var quadrants = []
 var ground_start_pos = Vector2(0,0)
 var copter_start_pos = Vector2(0,0)
 func _ready():
@@ -28,8 +28,11 @@ func _ready():
 #	var offset = 
 #	ground_start_pos = 384/16
 #	var copter_player_quadrant = quadrants[1]
-	ground_start_pos= Vector2(randf() * 384, randf() * 384)
-	copter_start_pos= Vector2(randf() * 384, randf() * 384)
+	pick_random_positions()
+	
+func pick_random_positions():
+	ground_start_pos= Vector2(randf() * MAP_WIDTH, randf() * MAP_WIDTH)
+	copter_start_pos= Vector2(randf() * MAP_WIDTH, randf() * MAP_WIDTH)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
