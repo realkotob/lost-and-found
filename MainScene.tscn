@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Meshes/Helicopter/helicopter.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Meshes/Helicopter/propellor_small.glb" type="PackedScene" id=2]
@@ -16,12 +16,11 @@
 [ext_resource path="res://addons/waterways/textures/foam_noise.png" type="Texture" id=14]
 [ext_resource path="res://Camera.gd" type="Script" id=15]
 [ext_resource path="res://ViewportContainer.gd" type="Script" id=16]
-[ext_resource path="res://terrain/brown_texture.png" type="Texture" id=17]
+[ext_resource path="res://terrain/mountain_texture.png" type="Texture" id=17]
 [ext_resource path="res://Helicopter.gd" type="Script" id=18]
 [ext_resource path="res://terrain/tree_texture.png" type="Texture" id=19]
-[ext_resource path="res://terrain/gray_texture.png" type="Texture" id=20]
+[ext_resource path="res://terrain/snow_texture.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Meshes/Foliage/Tree.obj" type="ArrayMesh" id=21]
-[ext_resource path="res://terrain/ground_texture.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Meshes/Player/player.glb" type="PackedScene" id=23]
 [ext_resource path="res://terrain/sand_texture.png" type="Texture" id=24]
 [ext_resource path="res://terrain/ground_light_texture.png" type="Texture" id=25]
@@ -76,10 +75,10 @@ shader_param/normal_scale = 1.0
 shader_param/uv_scale = Vector3( 30, 30, 30 )
 shader_param/roughness = 0.2
 shader_param/edge_fade = 0.25
-shader_param/albedo_color = Transform( 0, 0.15, 0, 0.8, 0.2, 0, 1, 0.5, 0, 0, 0, 0 )
+shader_param/albedo_color = Transform( 0, 0.117647, 0, 0.8, 0.219608, 0, 1, 0.823529, 1, 0, 0, 0 )
 shader_param/albedo_depth = 10.0
 shader_param/albedo_depth_curve = 0.25
-shader_param/transparency_clarity = 10.0
+shader_param/transparency_clarity = 1.0
 shader_param/transparency_depth_curve = 0.25
 shader_param/transparency_refraction = 0.05
 shader_param/flow_speed = 0.01
@@ -101,7 +100,7 @@ shader_param/i_texture_foam_noise = ExtResource( 14 )
 [sub_resource type="Resource" id=7]
 script = ExtResource( 7 )
 mode = 0
-textures = [ [ ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 24 ) ], [ null, null, null, null ] ]
+textures = [ [ ExtResource( 25 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 24 ) ], [ null, null, null, null ] ]
 
 [node name="Spatial" type="Control"]
 anchor_right = 1.0
@@ -146,8 +145,9 @@ shape = SubResource( 3 )
 environment = ExtResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( 0.707107, -0.541675, 0.45452, 0, 0.642788, 0.766044, -0.707107, -0.541675, 0.45452, 0, 30, 0 )
+transform = Transform( -0.707107, 0.541675, -0.454519, 0, 0.642788, 0.766044, 0.707107, 0.541675, -0.454519, 200, 20, 200 )
 shadow_enabled = true
+shadow_color = Color( 0.247059, 0.368627, 0.92549, 1 )
 shadow_bias = 2.0
 directional_shadow_max_distance = 20000.0
 
@@ -172,7 +172,7 @@ render_target_update_mode = 3
 shadow_atlas_size = 2048
 
 [node name="Player" type="Spatial" parent="HBoxContainer/ViewportContainer2/Viewport"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.0875, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 122.388, 2.27035, 111.829 )
 
 [node name="Camera" type="Camera" parent="HBoxContainer/ViewportContainer2/Viewport/Player"]
 transform = Transform( -1.62921e-07, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 1.24805e-07, -1.04723e-07, -9.36, 14.384, 0 )
@@ -232,10 +232,10 @@ mat_normal_bump_texture = ExtResource( 13 )
 mat_uv_scale = Vector3( 30, 30, 30 )
 mat_roughness = 0.2
 mat_edge_fade = 0.25
-mat_albedo_color = Transform( 0, 0.15, 0, 0.8, 0.2, 0, 1, 0.5, 0, 0, 0, 0 )
+mat_albedo_color = Transform( 0, 0.117647, 0, 0.8, 0.219608, 0, 1, 0.823529, 1, 0, 0, 0 )
 mat_albedo_depth = 10.0
 mat_albedo_depth_curve = 0.25
-mat_transparency_clarity = 10.0
+mat_transparency_clarity = 1.0
 mat_transparency_depth_curve = 0.25
 mat_transparency_refraction = 0.05
 mat_flow_speed = 0.01
@@ -272,7 +272,7 @@ ambient_wind = 0.0
 lod_scale = 2.0
 map_scale = Vector3( 0.75, 0.75, 0.75 )
 _terrain_data = ExtResource( 12 )
-chunk_size = 32
+chunk_size = 16
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
@@ -280,13 +280,12 @@ shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource( 7 )
-shader_params/u_ground_uv_scale = 20
+shader_params/u_ground_uv_scale = 10.0
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 
 [node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
-visible = false
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )

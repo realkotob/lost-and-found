@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/brown_texture.png-8db8e8e7fc9c46172122fc5fbde27296.s3tc.stex"
-path.etc2="res://.import/brown_texture.png-8db8e8e7fc9c46172122fc5fbde27296.etc2.stex"
+path.s3tc="res://.import/mountain_texture.png-59531c89483e84579d02bd1e4c0a4e35.s3tc.stex"
+path.etc2="res://.import/mountain_texture.png-59531c89483e84579d02bd1e4c0a4e35.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://terrain/brown_texture.png"
-dest_files=[ "res://.import/brown_texture.png-8db8e8e7fc9c46172122fc5fbde27296.s3tc.stex", "res://.import/brown_texture.png-8db8e8e7fc9c46172122fc5fbde27296.etc2.stex" ]
+source_file="res://terrain/mountain_texture.png"
+dest_files=[ "res://.import/mountain_texture.png-59531c89483e84579d02bd1e4c0a4e35.s3tc.stex", "res://.import/mountain_texture.png-59531c89483e84579d02bd1e4c0a4e35.etc2.stex" ]
 
 [params]
 

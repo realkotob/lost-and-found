@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/gray_texture.png-c3b9ab2e4b7090489e34b220c56ce53f.s3tc.stex"
-path.etc2="res://.import/gray_texture.png-c3b9ab2e4b7090489e34b220c56ce53f.etc2.stex"
+path.s3tc="res://.import/snow_texture.png-baac35bb72714bb096210f68ee089808.s3tc.stex"
+path.etc2="res://.import/snow_texture.png-baac35bb72714bb096210f68ee089808.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://terrain/gray_texture.png"
-dest_files=[ "res://.import/gray_texture.png-c3b9ab2e4b7090489e34b220c56ce53f.s3tc.stex", "res://.import/gray_texture.png-c3b9ab2e4b7090489e34b220c56ce53f.etc2.stex" ]
+source_file="res://terrain/snow_texture.png"
+dest_files=[ "res://.import/snow_texture.png-baac35bb72714bb096210f68ee089808.s3tc.stex", "res://.import/snow_texture.png-baac35bb72714bb096210f68ee089808.etc2.stex" ]
 
 [params]
 
