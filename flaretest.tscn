@@ -14,10 +14,10 @@
 [ext_resource path="res://terrain/data.hterrain" type="Resource" id=12]
 [ext_resource path="res://addons/waterways/textures/water1_normal_bump.png" type="Texture" id=13]
 [ext_resource path="res://addons/waterways/textures/foam_noise.png" type="Texture" id=14]
-[ext_resource path="res://Camera.gd" type="Script" id=15]
-[ext_resource path="res://ViewportContainer.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/ViewportContainer.gd" type="Script" id=16]
 [ext_resource path="res://terrain/mountain_texture.png" type="Texture" id=17]
-[ext_resource path="res://Helicopter.gd" type="Script" id=18]
+[ext_resource path="res://Scripts/Helicopter.gd" type="Script" id=18]
 [ext_resource path="res://terrain/tree_texture.png" type="Texture" id=19]
 [ext_resource path="res://terrain/snow_texture.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Meshes/Foliage/Tree.obj" type="ArrayMesh" id=21]
@@ -25,6 +25,7 @@
 [ext_resource path="res://terrain/sand_texture.png" type="Texture" id=24]
 [ext_resource path="res://terrain/ground_light_texture.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Meshes/Foliage/bush.obj" type="ArrayMesh" id=26]
+
 
 [sub_resource type="QuadMesh" id=1]
 

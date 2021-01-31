@@ -27,3 +27,7 @@ func _process(delta):
 		move_vec -= horizontalify(cam.global_transform.basis.x)
 		
 	global_transform.origin += move_vec
+	
+	if Input.is_action_just_pressed("toggle_map"):
+		Global.emit_signal("toggle_game_map")
+	Global.emit_signal("update_player_pos",global_transform.origin.x, global_transform.origin.z)
