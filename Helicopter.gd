@@ -4,6 +4,8 @@ extends Spatial
 var player_number = 2
 var camera_path
 
+onready var cam = $CameraParent/Camera
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,12 +18,12 @@ func horizontalify(vec : Vector3):
 func _process(delta):
 	var move_vec = Vector3(0,0,0)
 	if Input.is_action_pressed("p%s_down" %str(player_number)):
-		move_vec += horizontalify($Camera.global_transform.basis.z)
+		move_vec += horizontalify(cam.global_transform.basis.z)
 	if Input.is_action_pressed("p%s_up" %str(player_number)):
-		move_vec -= horizontalify($Camera.global_transform.basis.z)
+		move_vec -= horizontalify(cam.global_transform.basis.z)
 	if Input.is_action_pressed("p%s_right" %str(player_number)):
-		move_vec += horizontalify($Camera.global_transform.basis.x)
+		move_vec += horizontalify(cam.global_transform.basis.x)
 	if Input.is_action_pressed("p%s_left" %str(player_number)):
-		move_vec -= horizontalify($Camera.global_transform.basis.x)
+		move_vec -= horizontalify(cam.global_transform.basis.x)
 		
 	global_transform.origin += move_vec

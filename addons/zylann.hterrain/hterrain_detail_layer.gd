@@ -32,7 +32,7 @@ const _API_SHADER_PARAMS = {
 	"u_terrain_globalmap": true,
 	"u_terrain_inverse_transform": true,
 	"u_terrain_normal_basis": true,
-	"u_albedo_alpha": true,
+	"u_albedo_alpha": false,
 	"u_view_distance": true,
 	"u_ambient_wind": true
 }
