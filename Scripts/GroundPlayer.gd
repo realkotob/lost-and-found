@@ -6,7 +6,7 @@ var player_number = 1
 onready var cam = $CameraHelper/Camera
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.ground_player = self
 
 func horizontalify(vec : Vector3):
 	return (vec - Vector3.UP*vec.dot( Vector3.UP)).normalized()

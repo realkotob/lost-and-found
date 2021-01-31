@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Assets/Meshes/Helicopter/helicopter.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Meshes/Helicopter/propellor_small.glb" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://terrain/data.hterrain" type="Resource" id=12]
 [ext_resource path="res://addons/waterways/textures/water1_normal_bump.png" type="Texture" id=13]
 [ext_resource path="res://addons/waterways/textures/foam_noise.png" type="Texture" id=14]
+[ext_resource path="res://zombie.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/ViewportContainer.gd" type="Script" id=16]
 [ext_resource path="res://terrain/mountain_texture.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/Helicopter.gd" type="Script" id=18]
@@ -423,3 +424,16 @@ shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3( 1, 1, 1 )
+
+[node name="Zombies" type="Spatial" parent="."]
+
+[node name="zombie" parent="Zombies" instance=ExtResource( 15 )]
+
+[node name="zombie2" parent="Zombies" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 116.209, 1.88772, 109.363 )
+
+[node name="zombie3" parent="Zombies" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.161, 1.88772, 107.841 )
+
+[node name="zombie4" parent="Zombies" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.44, 1.88772, 108.903 )

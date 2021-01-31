@@ -3,6 +3,9 @@ extends Node
 
 var MAP_WIDTH = 384
 
+var ground_player
+var copter_player
+
 signal toggle_game_map
 signal update_player_pos(global_x,global_y)
 
