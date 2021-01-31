@@ -269,10 +269,10 @@ _uv2_sides = 0
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 6 )
 ambient_wind = 0.0
-lod_scale = 2.0
+lod_scale = 5.0
 map_scale = Vector3( 0.75, 0.75, 0.75 )
 _terrain_data = ExtResource( 12 )
-chunk_size = 16
+chunk_size = 64
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
@@ -286,6 +286,7 @@ shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 
 [node name="HTerrainDetailLayer" type="Spatial" parent="HTerrain"]
+visible = false
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )
