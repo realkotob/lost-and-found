@@ -10,9 +10,14 @@ export(float) var player_speed = 40
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	Global.copter_player = self
+	
+	global_transform.origin.x = Global.copter_start_pos.x
+	global_transform.origin.z = Global.copter_start_pos.y
 
-
+	$CameraHelper.rotate_y(deg2rad(randi() % 360))
+	
 func horizontalify(vec : Vector3):
 	return (vec - Vector3.UP*vec.dot( Vector3.UP)).normalized()
 

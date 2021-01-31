@@ -14,10 +14,22 @@ signal update_player_pos(global_x,global_y)
 
 var game_stopped = false
 
-# Called when the node enters the scene tree for the first time.
+var quadrants = []
+var ground_start_pos = Vector2(0,0)
+var copter_start_pos = Vector2(0,0)
 func _ready():
-	pass # Replace with function body.
-
+	randomize()
+#	for i in 16:
+#		quadrants.push_back(i)
+#	print(quadrants)
+#	quadrants.shuffle()
+#
+#	var ground_player_quadrant = quadrants[0]
+#	var offset = 
+#	ground_start_pos = 384/16
+#	var copter_player_quadrant = quadrants[1]
+	ground_start_pos= Vector2(randf() * 384, randf() * 384)
+	copter_start_pos= Vector2(randf() * 384, randf() * 384)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
