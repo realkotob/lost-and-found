@@ -17,10 +17,16 @@ func _process(delta):
 		move_vec += horizontalify(cam.global_transform.basis.z)
 	if Input.is_action_pressed("p%s_up" %str(player_number)):
 		move_vec -= horizontalify(cam.global_transform.basis.z)
+	
+	var rotate_dir = 0
 	if Input.is_action_pressed("p%s_right" %str(player_number)):
-		move_vec += horizontalify(cam.global_transform.basis.x)
+		rotate_dir -= delta
+#		move_vec += horizontalify(cam.global_transform.basis.x)
 	if Input.is_action_pressed("p%s_left" %str(player_number)):
-		move_vec -= horizontalify(cam.global_transform.basis.x)
+		rotate_dir += delta
+#		move_vec -= horizontalify(cam.global_transform.basis.x)
+	
+	$CameraHelper.rotate_y(rotate_dir)
 		
 	var next_pos = global_transform.origin + move_vec * delta * player_speed
 	if next_pos.z < 384 and next_pos.x < 384 and next_pos.z > 0 and next_pos.x > 0:
@@ -30,3 +36,6 @@ func _process(delta):
 	if rayobj:
 		var y_pos = $RayCast.get_collision_point().y
 		global_transform.origin.y = y_pos + 0.01
+
+func get_compass_rotation():
+	return $CameraHelper.rotation.y
