@@ -7,6 +7,8 @@ var ground_player
 var copter_player
 
 signal toggle_game_map
+signal you_win
+signal you_lose
 signal update_player_pos(global_x,global_y)
 
 

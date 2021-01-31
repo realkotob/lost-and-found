@@ -15,7 +15,9 @@ func _ready():
 
 func horizontalify(vec : Vector3):
 	return (vec - Vector3.UP*vec.dot( Vector3.UP)).normalized()
-	
+
+var check_height = 0
+var des_height = 0
 func _process(delta):
 	var move_vec = Vector3(0,0,0)
 	if Input.is_action_pressed("p%s_down" %str(player_number)):
@@ -41,10 +43,17 @@ func _process(delta):
 		Global.emit_signal("toggle_game_map")
 	Global.emit_signal("update_player_pos",global_transform.origin.x, global_transform.origin.z)
 	
+	
+	global_transform.origin.y = lerp(global_transform.origin.y,des_height, delta * 3)
+	
+	if check_height > 0:
+		check_height -=1
+		return
+	
+	check_height = 9
 	var rayobj = $RayCast.get_collider()
 	if rayobj:
 		var y_pos = $RayCast.get_collision_point().y
-		global_transform.origin.y = y_pos + 15
-
+		des_height = y_pos + 15
 func get_compass_rotation():
 	return $CameraHelper.rotation.y

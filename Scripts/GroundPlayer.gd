@@ -10,7 +10,9 @@ func _ready():
 
 func horizontalify(vec : Vector3):
 	return (vec - Vector3.UP*vec.dot( Vector3.UP)).normalized()
-	
+
+var check_height = 0
+var des_height = 0
 func _process(delta):
 	var move_vec = Vector3(0,0,0)
 	if Input.is_action_pressed("p%s_down" %str(player_number)):
@@ -32,10 +34,18 @@ func _process(delta):
 	if next_pos.z < 384 and next_pos.x < 384 and next_pos.z > 0 and next_pos.x > 0:
 		global_transform.origin = next_pos
 	
+#	global_transform.origin.y = lerp(global_transform.origin.y,des_height, delta * 30)
+		
+#	if check_height > 0:
+#		check_height -=1
+#		return
+#
+#	check_height = 2
 	var rayobj = $RayCast.get_collider()
 	if rayobj:
 		var y_pos = $RayCast.get_collision_point().y
-		global_transform.origin.y = y_pos + 0.01
-
+		des_height = y_pos + 0.01
+		global_transform.origin.y = des_height
+		
 func get_compass_rotation():
 	return $CameraHelper.rotation.y
