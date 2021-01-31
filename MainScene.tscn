@@ -238,25 +238,6 @@ enabled = true
 cast_to = Vector3( 0, -30, 0 )
 collision_mask = 2
 
-[node name="Instructions" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ground" type="Control" parent="Instructions"]
-margin_bottom = 600.0
-mouse_filter = 2
-size_flags_horizontal = 2
-
-[node name="Copter" type="Control" parent="Instructions"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 600.0
-mouse_filter = 2
-size_flags_horizontal = 3
-
 [node name="GameMap" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.50293
@@ -281,6 +262,72 @@ texture = ExtResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Instructions" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ground" type="Control" parent="Instructions"]
+margin_bottom = 600.0
+mouse_filter = 2
+size_flags_horizontal = 2
+
+[node name="Copter" type="Control" parent="Instructions"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="MainMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleText" type="Label" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -108.448
+margin_right = 20.0
+margin_bottom = -94.4478
+
+[node name="TitleAsPic" type="TextureRect" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -121.448
+margin_right = 20.0
+margin_bottom = -81.4478
+
+[node name="Play" type="TextureButton" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 24.0497
+margin_right = 20.0
+margin_bottom = 64.0497
+
+[node name="Randomize" type="TextureButton" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 106.81
+margin_right = 20.0
+margin_bottom = 146.81
 
 [node name="GlobalRiver" type="Spatial" parent="."]
 transform = Transform( 200, 0, 0, 0, 1, 0, 0, 0, 400, 200, 1.3, 0 )
