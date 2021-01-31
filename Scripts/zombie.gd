@@ -8,7 +8,7 @@ func _ready():
 
 var max_speed = 5
 var separation_dist = 2
-var separation_strength = 2
+var separation_strength = 0.1
 var arrive_rad = 5
 func _process(delta):
 	
@@ -26,7 +26,8 @@ func _process(delta):
 		if zom != self:
 			var dist = global_transform.origin - zom.global_transform.origin
 			if dist.length_squared() < separation_dist:
-				desired_vel -= dist.normalized() * separation_strength * max_speed * ( 1- dist.length_squared() / separation_dist)
+				print("Too close")
+				desired_vel += dist.normalized() * separation_strength * max_speed * ( 1- dist.length_squared() / separation_dist)
 			
 	desired_vel = desired_vel.normalized() 
 	global_transform.origin += desired_vel * delta
