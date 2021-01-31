@@ -223,6 +223,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.223363, 2.24961, 0 )
 autoplay = "helicopter_active"
 anims/helicopter_active = SubResource( 4 )
 
+[node name="RayCast" type="RayCast" parent="HBoxContainer/ViewportContainer/Viewport/Copter"]
+enabled = true
+cast_to = Vector3( 0, -30, 0 )
+collision_mask = 2
+
 [node name="GameMap" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.50293
@@ -304,8 +309,8 @@ map_scale = Vector3( 0.75, 0.75, 0.75 )
 _terrain_data = ExtResource( 12 )
 chunk_size = 64
 collision_enabled = true
-collision_layer = 1
-collision_mask = 1
+collision_layer = 2
+collision_mask = 2
 shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null

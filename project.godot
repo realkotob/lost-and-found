@@ -91,6 +91,10 @@ use_flare={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_2="Ground"
+
 [rendering]
 
 quality/directional_shadow/size=2048

@@ -31,3 +31,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("toggle_map"):
 		Global.emit_signal("toggle_game_map")
 	Global.emit_signal("update_player_pos",global_transform.origin.x, global_transform.origin.z)
+	
+	var rayobj = $RayCast.get_collider()
+	if rayobj:
+		var y_pos = $RayCast.get_collision_point().y
+		global_transform.origin.y = y_pos + 15
